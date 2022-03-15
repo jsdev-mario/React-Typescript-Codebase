@@ -1,6 +1,6 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { Book } from 'utils/types';
-import { fetchBooksSuccess } from 'store/actions/book';
+import { fetchBooksFailure, fetchBooksSuccess } from 'store/actions/book';
 import { BookActionTypes, FetchBooksRequest } from 'store/types/book';
 import { ApiResponse, BookApi } from 'apis';
 
@@ -15,16 +15,16 @@ function* fetchBooksSaga(action: FetchBooksRequest) {
                 totalCount: response.totalCount || 0,
             })
         );
-    } catch (e) {
-        // yield put(
-        //     fetchPostsFailure({
-        //         error: e.message,
-        //     })
-        // );
+    } catch (e: any) {
+        yield put(
+            fetchBooksFailure({
+                error: e.message,
+            })
+        );
     }
 }
 
-function* booksSaga() {
+export function* booksSaga() {
     yield all([takeLatest(BookActionTypes.FETCH_BOOKS_REQUEST, fetchBooksSaga)]);
 }
 
