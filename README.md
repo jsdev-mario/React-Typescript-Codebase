@@ -1,33 +1,38 @@
 # HomeSpring Test - Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Install, Configure & Run
 
-## Configuration
-Rename .env.example to .env and add add environment variables.
+Below mentioned are the steps to install, configure & run in your platform/distributions.
 
-## Available Scripts
+Clone the repo.
+```bash
+git clone https://github.com/w3ever/homespring-frontend.git;
+```
+Goto the cloned project folder.
+```bash
+cd project;
+```
 
-In the project directory, you can run:
+Install NPM dependencies.
+```bash
+npm install;
+```
 
-### `npm start`
+Change name of .env.example file to .env and Edit .env file using any editor of your choice.
 
-Runs the app in the development mode.\
-Open [http://localhost:3100](http://localhost:3100) to view it in the browser.
+Run the app
+```bash
+npm start;
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Run the test
+```bash
+npm run test;
+```
 
-### `npm test`
+Build the app
+```bash
+npm run build;
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
